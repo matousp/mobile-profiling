@@ -102,5 +102,67 @@ IP address      -- packets -- unique headers
 10.42.0.76      --    35   --      37
 10.42.0.85      --   212   --      11
 10.42.0.97      --    20   --      10
+---------------------
+*total IP addresses: 13, packets: 2105
+---------------------
+Frequency of HTTP headers:
+                   HTTP header -- Occurences -- Source IP(s) -- Unique values
+                           A37         2              1              1
+                           A38         2              1              1
+                        Accept      1145              8             17
+               Accept-Encoding      1077             12              5
+               Accept-Language       924              7              6
+Access-Control-Request-Headers         1              1              1
+ Access-Control-Request-Method         1              1              1
+                 Cache-Control       186              2              5
+                    Connection      1343             12              4
+                Content-Length       246              5             34
+                  Content-Type        82              5              8
+                        Cookie       648              5             43
+                           DNT       241              2              1
+                        Expect         1              1              1
+                          HOST       685              4              1
+                     Handshake         1              1              1
+                          Host      1420             13            150
+             If-Modified-Since        26              3             16
+                 If-None-Match         8              3              8
+           If-Unmodified-Since         2              1              1
+                           MAN       685              4              1
+                         MS-CV       170              1            170
+                            MX       755              5              4
+                           Man        70              1              1
+                      Msg-Type         2              1              2
+                        Origin        18              2              7
+                        Pragma       176              1              1
+                         Range       139              2            108
+                       Referer       849              4             48
+                            ST       755              5              6
+                    USER-AGENT       393              2              3
+     Upgrade-Insecure-Requests        36              3              1
+                    User-Agent      1316             13             33
+                    User-agent         2              1              1
+                 X-App-Version         1              1              1
+          X-Chrome-UMA-Enabled         1              1              1
+                 X-Client-Data         1              1              1
+         X-FB-Background-State        16              4              1
+              X-FB-HTTP-Engine        17              4              1
+                  X-FB-Net-HNI        17              4              1
+                  X-FB-SIM-HNI        17              4              1
+              X-Requested-With        17              3              2
+                   X-Umeng-Sdk         2              1              2
+                   X-Umeng-UTC         2              1              2
+                        appVer         2              1              2
+                      bundleId         2              1              2
+                           cmd         2              1              1
+                            hb         2              1              1
+                    platformId         2              1              1
+                        prodId         2              1              2
+                        sdkVer         2              1              2
+               secureSessionId         2              1              2
+        strategylastUpdateTime         2              1              2
+                   wup_version         2              1              1
+---------------------
+*total unique HTTP headers: 54 
+*total HTTP headers: 13518
 </pre>
 
