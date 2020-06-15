@@ -178,7 +178,7 @@ Examples:
 Output: CSV file with the following structure: 
 <pre> 
 IPv4/v6 address; dst_IPv4/v6 addresses ...,; type+domain_name ..., score
-      <address>; <occur>;<occur>; ....;<occur>; total score 
+<address>; <occur>;<occur>; ....;<occur>; total score 
 </pre>  
 
 Example of dns.txt input file:
@@ -212,17 +212,28 @@ SrcIP; 10.1120.218.1; 8.8.4.4; A+10.im.cz;PTR_rc._tcp.local; ...
 
 SSL data are processed by <tt>format-ssl.pl</tt> script that reads from raw tshark output in txt format, analyzes data and prints output in CSV format. The output is a table with occurences of all combinations of ciphersuites, extensions and other SSL parameters. If -hash argument is used, instead of textual strings of SSL values, a hash value is printed. <tt> dns_file</tt> contains data from <tt>dns-resp.txt</tt>
   
-<tt>Format: format-ssl.pl -f \<input_file\> </tt>
+<tt>Format: format-ssl.pl -f \<ssl.txt\> </tt>
  
 Examples: 
-  * <tt>format-dns.pl -f dns.txt > dns.csv</tt>
+  * <tt>format-ssl.pl -f ssl.txt > ssl.csv</tt>
   
-Output: CSV file with the following structure: 
+CSV output file with the following structure: 
 <pre> 
-IPv4/v6 address; dst_IPv4/v6 addresses ...,; type+domain_name ..., score
-      <address>; <occur>;<occur>; ....;<occur>; total score 
+ IP address; version+ciphers_suite+extensions,..., score
+ <address>; <occur>, <occur>, ...., <occur>, score
 </pre>  
 
-Example of dns.txt input file:
+Example of ssl.txt input file:
 <pre>
+0.42.0.151;106.11.250.142;443;0x00000301;4,5,47,53,49154,49156,49157,49164,49166,49167,49159,49161,49162,49169,49171,49172,51,57,50,56,10,49155,49165,49160,49170,22,19,9,21,18,3,8,20,17,255;0,11,10,35
+10.42.0.151;13.107.3.128;443;0x00000303;49200,49196,49192,49188,49172,49162,49202,49198,49194,49190,49167,49157,157,61,53,49199,49195,49191,49187,49171,49161,49201,49197,49193,49189,49166,49156,156,60,47,49170,49160,49165,49155,10,255;11,10,13,15
 </pre>
+
+
+Example of ssl.csv output file:
+<pre>
+SrcIP;1.0+4,5,47,53,49154,49156,...;...
+10.42.0.151:106.11.250.142:443;1;0; ...
+10.42.0.151:13.107.3.128:443;0;1;...
+</pre>
+where the first column is a concatanation of src IP address, dst IP address and dst port.
