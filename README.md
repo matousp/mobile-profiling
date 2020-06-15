@@ -46,7 +46,13 @@ User Guide
   
 The following output files are created if do not exist:
   * http-headers.json, http-headers6.json - extracted HTTP headers in JSON format
-  * dns.csv, dns-resp.csv - extracted DNS data in CSV format
-  * ssl.csv - extracted SSL header data in CSV format
-  * quic.csv - extracted QUIC header data in CSV format
+  * dns-txt.csv, dns-resp.csv - extracted DNS data in CSV format
+  * ssl-txt.csv - extracted SSL header data in CSV format
+  * quic-txt.csv - extracted QUIC header data in CSV format
   * dhcp.csv - extracted DHCP header data
+  
+Further, the extract_pcap.sh script calls perl scripts for analyzing raw dat in .json or .csv files. The following scripts are called:
+  * get-header.pl - processes HTTP extracted data saved in http-headers.json and http-headers6.json files, see below. The output is saved to user-agent.csv, user-agent6.csv, cookies.csv, cookies6.csv, http-headers-stat.txt, http-headers-stat6.txt, http-headers-all.txt and http-headers-all6.txt
+  * format-dns.pl - processes DNS extracted data saved in dns-txt.csv file, see below. The output is written into dns.csv file.
+  * format-ssl.pl - processes SSL extracted data saved in ssl-txt.csv file, see below. The output is written into ssl.csv and ssl-hash.csv files. 
+  * format-quic.pl - processes QUIC extracted data saved in quic-txt.csf file, see below. The output is written into quic.csv file. 
