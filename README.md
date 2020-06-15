@@ -58,11 +58,11 @@ Further, the extract_pcap.sh script calls perl scripts for analyzing raw dat in 
   
 <h3>2. Processing HTTP headers</h3>
 
- <tt>Format: get-headers.pl -f \<HTTP-headers.json\> -d User-agent >  \<user-agent.csv\></tt>
+<tt>Format: get-headers.ps -f \<JSON_file_name\> -ipv6 [-h \<header\>] [-ip \<src IP address\>] [-stats] [-d header | host | user-agent] </tt>
   
- <tt>Format: get-headers.pl -f \<HTTP-headers.json\> -d Cookie >  \<cookies.csv\></tt> 
-  
- <tt>Format: get-headers.pl -f \<HTTP-headers.json\> -d stat >  \<http-headers-stat.txt\></tt> 
-  
- <tt>Format: get-headers.pl -f \<HTTP-headers.json\> >  \<http-headers-all.txt\></tt> 
+Examples: 
+  * <tt>get-headers.pl -f http-headers.json -d User-agent > user-agent.csv</tt>
+  * <tt>get-headers.pl -f http-headers.json -d Cookie > cookies.csv</tt> 
+  * <tt>get-headers.pl -f http-headers.json -d stat >  http-headers-stat.txt</tt> 
+  * <tt>get-headers.pl -f http-headers.json >  http-headers-all.txt</tt> 
   
