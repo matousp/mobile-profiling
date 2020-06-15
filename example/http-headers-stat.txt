@@ -1,0 +1,10 @@
+---------------------
+IP address      -- packets -- unique headers
+---------------------
+*total IP addresses: 0, packets: 0
+---------------------
+Frequency of HTTP headers:
+                   HTTP header -- Occurences -- Source IP(s) -- Unique values
+---------------------
+*total unique HTTP headers: 0 
+*total HTTP headers: 0
