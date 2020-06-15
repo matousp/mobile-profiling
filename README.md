@@ -28,8 +28,9 @@ All scripts were developed and used under FreeBSD system. For running scripts, t
 <h2>User Guide</h2>
 <h3>1. Extracting metadata from a PCAP file</h3>
 
- <tt>Format: extract_pcap.sh \<PCAP\> \<output DIR\><br>
- Example: extract_pcap.sh ../example/mobile-test2.pcap ../example/output</tt>
+ <tt>Format: extract_pcap.sh \<PCAP\> \<output DIR\></tt>
+  
+ <tt>Example: extract_pcap.sh ../example/mobile-test2.pcap ../example/output</tt>
   
  - The scripts reads a PCAP file and extract selected values from HTTP, DNS, SSL, QUIC, and DHCP traffic using tshark. This data are later processed by specialized scripts, see below. Extracted data of each protocol is saved into a separted file. 
  - New protocols can be added to the analysis by inserting relevant tshark command. 
@@ -54,3 +55,14 @@ Further, the extract_pcap.sh script calls perl scripts for analyzing raw dat in 
   * format-dns.pl - processes DNS extracted data saved in dns-txt.csv file, see below. The output is written into dns.csv file.
   * format-ssl.pl - processes SSL extracted data saved in ssl-txt.csv file, see below. The output is written into ssl.csv and ssl-hash.csv files. 
   * format-quic.pl - processes QUIC extracted data saved in quic-txt.csf file, see below. The output is written into quic.csv file. 
+  
+<h3>2. Processing HTTP headers</h3>
+
+ <tt>Format: get-headers.pl -f \<HTTP-headers.json\> -d User-agent >  \<user-agent.csv\></tt>
+  
+ <tt>Format: get-headers.pl -f \<HTTP-headers.json\> -d Cookie >  \<cookies.csv\></tt> 
+  
+ <tt>Format: get-headers.pl -f \<HTTP-headers.json\> -d stat >  \<http-headers-stat.txt\></tt> 
+  
+ <tt>Format: get-headers.pl -f \<HTTP-headers.json\> >  \<http-headers-all.txt\></tt> 
+  
