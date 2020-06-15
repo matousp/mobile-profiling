@@ -166,3 +166,44 @@ Access-Control-Request-Headers         1              1              1
 *total HTTP headers: 13518
 </pre>
 
+<h3>3. Processing DNS data</h3>
+
+DNS data are processed by <tt>format-dns.pl> script that reads raw tshark extracted DNS data, analyzes it and prints DNS profiles based on DNS request occurences. 
+  
+<tt>Format: format-dns.pl -f \<dns.txt\> </tt>
+ 
+Examples: 
+  * <tt>format-dns.pl -f dns.txt> dns.csv</tt>
+  
+Output: CSV file with the following structure: 
+<pre> 
+IPv4/v6 address; dst_IPv4/v6 addresses ..., type+domain_name ..., score
+      <address>; <occur>, <occur>, ...., <occur>, score 
+</pre>  
+
+Example of dns.txt input file:
+<pre>
+10.42.0.100;10.42.0.1;1;DB5SCH101101813.wns.windows.com;
+10.42.0.100;10.42.0.1;1;DB5SCH101110123.wns.windows.com;
+10.42.0.100;10.42.0.1;1;a.centrum.cz;
+10.42.0.100;10.42.0.1;1;a.centrum.cz;
+10.42.0.100;10.42.0.1;1;a248.e.akamai.net;
+10.42.0.100;10.42.0.1;1;aa.agkn.com;
+10.42.0.100;10.42.0.1;1;adadvisor.net;
+10.42.0.100;10.42.0.1;1;ads.rubiconproject.com;
+10.42.0.100;10.42.0.1;1;adservice.google.com;
+10.42.0.100;10.42.0.1;1;adservice.google.cz;
+10.42.0.100;10.42.0.1;1;aktualne.disqus.com;
+10.42.0.100;10.42.0.1;1;allunite.com;
+10.42.0.100;10.42.0.1;1;ampconfigprod.blob.core.windows.net;
+10.42.0.100;10.42.0.1;1;api.exponea.com;
+</pre>
+
+Example of dns.csv output file:
+<pre>
+SrcIP; 10.1120.218.1; 8.8.4.4; A+10.im.cz;PTR_rc._tcp.local; ...
+10.42.0.100;0;0;0;0
+10.42.0.134;28;0;1;0;
+10.42.0.85;0;12;1;36;
+...
+</pre>
