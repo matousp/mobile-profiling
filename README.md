@@ -71,6 +71,7 @@ Examples:
 The output .csv files contain tables of occurrences of user-agent strings or cookies per source IP address which creates an HTTP profile of a sending device. CSV file with user-agents strings uses "!" as separator because, "," or ";" can be a part of the user-agent string.
 
 Example of output:
+<pre>
 *IP = 10.42.0.85 (212x packets, 11x different headers)
  Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8 (7x)
  Accept-Encoding: gzip,deflate,sdch (7x)
@@ -86,7 +87,7 @@ Example of output:
  User-Agent: Dalvik/2.1.0 (Linux; U; Android 7.0; SM-T819 Build/NRD90M (6x)
  User-Agent: Dalvik/2.1.0 (Linux; U; Android 7.0; SM-T819 Build/NRD90M) (1x)
  
- ---------------------
+---------------------
 IP address      -- packets -- unique headers
 10.42.0.100     --   192   --      15
 10.42.0.134     --    12   --       4
@@ -101,5 +102,5 @@ IP address      -- packets -- unique headers
 10.42.0.76      --    35   --      37
 10.42.0.85      --   212   --      11
 10.42.0.97      --    20   --      10
- 
+</pre>
 
