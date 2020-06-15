@@ -68,4 +68,38 @@ Examples:
   * <tt>get-headers.pl -f http-headers.json -d stat >  http-headers-stat.txt</tt> 
   * <tt>get-headers.pl -f http-headers.json >  http-headers-all.txt</tt> 
   
-The output .csv files contain tables of occurrences of user-agent strings or cookies per source IP address which creates an HTTP profile of a sending device. 
+The output .csv files contain tables of occurrences of user-agent strings or cookies per source IP address which creates an HTTP profile of a sending device. CSV file with user-agents strings uses "!" as separator because, "," or ";" can be a part of the user-agent string.
+
+Example of output:
+*IP = 10.42.0.85 (212x packets, 11x different headers)
+ Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8 (7x)
+ Accept-Encoding: gzip,deflate,sdch (7x)
+ Accept-Language: en-GB,en;q=0.8,en-US;q=0.6,en;q=0.4 (7x)
+ Connection: close (7x)
+ HOST: 239.255.255.250:1900 (205x)
+ Host: connectivitycheck.gstatic.com (6x)
+ Host: www.paypal.com (1x)
+ MAN: "ssdp:discover" (205x)
+ MX: 1 (205x)
+ ST: upnp:rootdevice (205x)
+ USER-AGENT: Android/7.0 UPnP/1.1 fingdroid/6.2.1 (205x)
+ User-Agent: Dalvik/2.1.0 (Linux; U; Android 7.0; SM-T819 Build/NRD90M (6x)
+ User-Agent: Dalvik/2.1.0 (Linux; U; Android 7.0; SM-T819 Build/NRD90M) (1x)
+ 
+ ---------------------
+IP address      -- packets -- unique headers
+10.42.0.100     --   192   --      15
+10.42.0.134     --    12   --       4
+10.42.0.156     --     2   --       6
+10.42.0.161     --     2   --       4
+10.42.0.162     --    14   --       8
+10.42.0.171     --     5   --       4
+10.42.0.199     --     1   --       2
+10.42.0.205     --    12   --      12
+10.42.0.232     --  1028   --      27
+10.42.0.253     --   570   --      27
+10.42.0.76      --    35   --      37
+10.42.0.85      --   212   --      11
+10.42.0.97      --    20   --      10
+ 
+
