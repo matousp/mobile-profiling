@@ -3,8 +3,7 @@ This folder cotains scripts for profiling mobile apps based on metadata extracte
 
 The solution is designed as open so that new protocols can be easily added for profile creation, also weights, or advanced comparison methods can be implemented for profile matching.
 
-<h1>Introduction</h1>
-------------
+<h2>Introduction</h2>
 Scripts for mobile apps fingerprinting
 
 (c) Petr Matousek, 2017-2019
@@ -20,16 +19,14 @@ A list of scripts:
   - get-headers.pl - analyzing HTTP headers and creating an HTTP profile
   - match-profile.pl - comparison of HTTP, DNS, SSL, DHCP, and/or QUIC profiles
 
-#Installation
-------------
+<h2>Installation</h2>
 All scripts were developed and used under FreeBSD system. For running scripts, the following software is required:
 * tshark, version 3.2
 * perl, version 5
 * required perl modules: Digest::MD5, Getopt::Long, JSON
 
-#User Guide
-----------
-1. Extracting metadata from a PCAP file
+<h2>User Guide</h2>
+<h3>1. Extracting metadata from a PCAP file</h3>
 
  <tt>Format: extract_pcap.sh \<PCAP\> \<output DIR\><br>
  Example: extract_pcap.sh ../example/mobile-test2.pcap ../example/output</tt>
