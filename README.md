@@ -35,4 +35,18 @@ User Guide
   
  - The scripts reads a PCAP file and extract selected values from HTTP, DNS, SSL, QUIC, and DHCP traffic using tshark. This data are later processed by specialized scripts, see below. Extracted data of each protocol is saved into a separted file. 
  - New protocols can be added to the analysis by inserting relevant tshark command. 
- - IF a protocol is not present in the PCAP file, an empty output 
+ - If a protocol is not present in the PCAP file, an empty output file is created.
+ 
+ The following data are extracted from the PCAP file:
+  * For HTTP requests over IPv4 and IPv6: src IP, http request line
+  * For DNS requests and responses over IPv4 and IPv6: src IP, dst IP, Query type, Query name, Response
+  * For SSL hello data: src IP, dst IP, dst port, TLS handshake version, TLS ciphersuite, TLS extension, TLS supported groups, TLS EC point format, frame time, TLS server name, x509 certificate (DNS name)
+  * For QUIC traffic: src IP, QUIC tag
+  * For DHCP requests: requested IP address, src MAC address, DHCP hostname, DHCP request list, DHCP vendor class
+  
+The following output files are created if do not exist:
+  * http-headers.json, http-headers6.json - extracted HTTP headers in JSON format
+  * dns.csv, dns-resp.csv - extracted DNS data in CSV format
+  * ssl.csv - extracted SSL header data in CSV format
+  * quic.csv - extracted QUIC header data in CSV format
+  * dhcp.csv - extracted DHCP header data
