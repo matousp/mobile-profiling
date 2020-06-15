@@ -1,10 +1,10 @@
 # mobile-profiling
-This folder cotains scripts for profiling mobile apps based on metadata extracted from selected Internet protocols. Mobile apps profiles are creating using occurences of typical header values extracted from HTTP communication, DNS, SSL, Quick and DHCP traffic. Profile matching uses comparison of occurences of header values of known profiles with an unknown communication. 
+This folder cotains scripts for profiling mobile devices based on communicating applications and metadata extracted from selected Internet protocols. Mobile device profiles are creating using occurences of typical header values extracted from HTTP communication, DNS, SSL, Quick and DHCP traffic. Profile matching uses comparison of occurences of header values of known profiles with an unknown communication. 
 
 The solution is designed as open so that new protocols can be easily added for profile creation, also weights, or advanced comparison methods can be implemented for profile matching.
 
 <h2>Introduction</h2>
-Scripts for mobile apps fingerprinting
+Scripts for mobile device profiling
 
 (c) Petr Matousek, 2017-2019
 Contact: matousp@fit.vutbr.cz
@@ -58,6 +58,8 @@ Further, the extract_pcap.sh script calls perl scripts for analyzing raw dat in 
   
 <h3>2. Processing HTTP headers</h3>
 
+HTTP headers in JSON format are processed by the <tt>get-headers.pl</tt> parser that reads JSON output of tshark and parses HTTP headers. The script can processes selected headers and also prints header statistics. When parameter <tt>-ipv6</tt> is used, it processes HTTP packets encapsulated in IPv6 protocol.
+
 <tt>Format: get-headers.ps -f \<JSON_file_name\> -ipv6 [-h \<header\>] [-ip \<src IP address\>] [-stats] [-d header | host | user-agent] </tt>
   
 Examples: 
@@ -66,3 +68,4 @@ Examples:
   * <tt>get-headers.pl -f http-headers.json -d stat >  http-headers-stat.txt</tt> 
   * <tt>get-headers.pl -f http-headers.json >  http-headers-all.txt</tt> 
   
+The output .csv files contain tables of occurrences of user-agent strings or cookies per source IP address which creates an HTTP profile of a sending device. 
