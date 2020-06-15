@@ -19,7 +19,14 @@ A list of scripts:
 
 Installation
 ------------
-All scripts were developed and used under FreeBSD system. 
+All scripts were developed and used under FreeBSD system. For running scripts, the following software is required:
+* tshark, version 3.2
+* perl, version 5
+* perl plugins:
+** Digest::MD5
+** Getopt::Long
+** JSON
+
 
 Executing scripts
 -----------------
