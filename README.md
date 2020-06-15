@@ -168,7 +168,7 @@ Access-Control-Request-Headers         1              1              1
 
 <h3>3. Processing DNS data</h3>
 
-DNS data are processed by <tt>format-dns.pl</tt> script that reads raw tshark extracted DNS data, analyzes it and prints DNS profiles based on DNS request occurences. As keys, the script observes requested DNS servers (IP addresses), domain request types (A, AAAA, PTR, etc.), and domain name requests. All these keys are used to build a DNS profile of the device based on occurrences of values. 
+DNS traffic is processed by <tt>format-dns.pl</tt> script that reads raw tshark extracted DNS data, analyzes it and prints DNS profiles based on DNS request occurences. As keys, the script observes requested DNS servers (IP addresses), domain request types (A, AAAA, PTR, etc.), and domain name requests. All these keys are used to build a DNS profile of the device based on occurrences of values. 
   
 <tt>Format: format-dns.pl -f \<dns.txt\> </tt>
  
@@ -210,7 +210,7 @@ SrcIP; 10.1120.218.1; 8.8.4.4; A+10.im.cz;PTR_rc._tcp.local; ...
 
 <h3>4. Processing SSL data</h3>
 
-SSL data are processed by <tt>format-ssl.pl</tt> script that reads from raw tshark output in txt format, analyzes data and prints output in CSV format. The output is a table with occurences of all combinations of ciphersuites, extensions and other SSL parameters. If -hash argument is used, instead of textual strings of SSL values, a hash value is printed. <tt> dns_file</tt> contains data from <tt>dns-resp.txt</tt>
+SSL metadata is processed by <tt>format-ssl.pl</tt> script that reads from raw tshark output in txt format, analyzes data and prints output in CSV format. The output is a table with occurences of all combinations of ciphersuites, extensions and other SSL parameters. If -hash argument is used, instead of textual strings of SSL values, a hash value is printed. 
   
 <tt>Format: format-ssl.pl -f \<ssl.txt\> </tt>
  
@@ -229,7 +229,6 @@ Example of ssl.txt input file:
 10.42.0.151;13.107.3.128;443;0x00000303;49200,49196,49192,49188,49172,49162,49202,49198,49194,49190,49167,49157,157,61,53,49199,49195,49191,49187,49171,49161,49201,49197,49193,49189,49166,49156,156,60,47,49170,49160,49165,49155,10,255;11,10,13,15
 </pre>
 
-
 Example of ssl.csv output file:
 <pre>
 SrcIP;1.0+4,5,47,53,49154,49156,...;...
@@ -237,3 +236,42 @@ SrcIP;1.0+4,5,47,53,49154,49156,...;...
 10.42.0.151:13.107.3.128:443;0;1;...
 </pre>
 where the first column is a concatanation of src IP address, dst IP address and dst port.
+
+<h3>5. Processing QUIC data</h3>
+
+QUIC traffic is processed by <tt>format-quic.pl</tt> script that reads raw tshark values, analyzes them and creates an CSV output with ocurrences of QUIC user agent identifiers. 
+
+<tt>Format: format-quic.pl -f \<quic.txt\> </tt>
+ 
+Examples: 
+  * <tt>format-ssl.pl -f ssl.txt > ssl.csv</tt>
+  
+CSV output file with the following structure: 
+<pre> 
+ IP address; version+ciphers_suite+extensions,..., score
+ <address>; <occur>, <occur>, ...., <occur>, score
+</pre>  
+
+Example of quic.txt input file:
+<pre>
+10.42.0.151,Chrome/65.0.3325.109 Android 4.4.4; SM-G357FZ Build/KTU84P
+10.42.0.151,Chrome/65.0.3325.109 Android 4.4.4; SM-G357FZ Build/KTU84P
+10.42.0.151,Chrome/65.0.3325.109 Android 4.4.4; SM-G357FZ Build/KTU84P
+10.42.0.151,Chrome/65.0.3325.109 Android 4.4.4; SM-G357FZ Build/KTU84P
+10.42.0.151,Chrome/65.0.3325.109 Android 4.4.4; SM-G357FZ Build/KTU84P
+10.42.0.151,Chrome/65.0.3325.109 Android 4.4.4; SM-G357FZ Build/KTU84P
+10.42.0.151,com.google.android.apps.maps Cronet/62.0.3202.84
+10.42.0.151,com.google.android.apps.maps Cronet/62.0.3202.84
+10.42.0.151,com.google.android.apps.maps Cronet/62.0.3202.84
+10.42.0.229,com.snapchat.android Cronet/58.0.3029.83
+10.42.0.229,com.snapchat.android Cronet/58.0.3029.83
+10.42.0.229,com.snapchat.android Cronet/58.0.3029.83
+</pre>
+
+Example of ssl.csv output file:
+<pre>
+SrcIP,Chrome/65.0.3325.109 Android 4.4.4; SM-G357FZ Build/KTU84P,com.google.android.apps.maps Cronet/62.0.3202.84;...
+10.42.0.151,1,1,...
+10.42.0.82,0,0,...
+...
+</pre>
