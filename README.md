@@ -168,7 +168,7 @@ Access-Control-Request-Headers         1              1              1
 
 <h3>3. Processing DNS data</h3>
 
-DNS data are processed by <tt>format-dns.pl> script that reads raw tshark extracted DNS data, analyzes it and prints DNS profiles based on DNS request occurences. 
+DNS data are processed by <tt>format-dns.pl</tt> script that reads raw tshark extracted DNS data, analyzes it and prints DNS profiles based on DNS request occurences. As keys, the script observes requested DNS servers (IP addresses), domain request types (A, AAAA, PTR, etc.), and domain name requests. All these keys are used to build a DNS profile of the device based on occurrences of values. 
   
 <tt>Format: format-dns.pl -f \<dns.txt\> </tt>
  
