@@ -1,5 +1,5 @@
 # mobile-profiling
-This folder cotains scripts for profiling mobile devices based on communicating applications and metadata extracted from selected Internet protocols. Mobile device profiles are creating using ocurrences of typical header values extracted from HTTP communication, DNS, SSL, Quick and DHCP traffic. Profile matching uses comparison of ocurrences of header values of known profiles with an unknown communication. 
+This folder cotains scripts for profiling mobile devices based on communicating applications and metadata extracted from selected Internet protocols. Mobile device profiles are creating using occurrences of typical header values extracted from HTTP communication, DNS, SSL, Quick and DHCP traffic. Profile matching uses comparison of occurrences of header values of known profiles with an unknown communication. 
 
 The solution is designed as open so that new protocols can be easily added for profile creation, also weights, or advanced comparison methods can be implemented for profile matching.
 
