@@ -31,7 +31,7 @@ User Guide
 ----------
 1. Extracting metadata from a PCAP file
 
- <tt>Format: extract_pcap.sh <PCAP> <output DIR>, e.g., extract_pcap.sh ../example/mobile-test2.pcap ../example/output</tt>
+ <tt>Format: extract_pcap.sh \<PCAP\> \<output DIR\>, e.g., extract_pcap.sh ../example/mobile-test2.pcap ../example/output</tt>
   
  - The scripts reads a PCAP file and extract selected values from HTTP, DNS, SSL, QUIC, and DHCP traffic using tshark. This data are later processed by specialized scripts, see below. Extracted data of each protocol is saved into a separted file. 
  - New protocols can be added to the analysis by inserting relevant tshark command. 
