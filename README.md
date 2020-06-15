@@ -3,7 +3,7 @@ This folder cotains scripts for profiling mobile apps based on metadata extracte
 
 The solution is designed as open so that new protocols can be easily added for profile creation, also weights, or advanced comparison methods can be implemented for profile matching.
 
-#Introduction
+<h1>Introduction</h1>
 ------------
 Scripts for mobile apps fingerprinting
 
