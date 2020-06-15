@@ -177,8 +177,8 @@ Examples:
   
 Output: CSV file with the following structure: 
 <pre> 
-IPv4/v6 address; dst_IPv4/v6 addresses ..., type+domain_name ..., score
-      <address>; <occur>, <occur>, ...., <occur>, score 
+IPv4/v6 address; dst_IPv4/v6 addresses ...,; type+domain_name ..., score
+      <address>; <occur>;<occur>; ....;<occur>; total score 
 </pre>  
 
 Example of dns.txt input file:
