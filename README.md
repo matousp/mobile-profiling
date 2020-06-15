@@ -207,3 +207,22 @@ SrcIP; 10.1120.218.1; 8.8.4.4; A+10.im.cz;PTR_rc._tcp.local; ...
 10.42.0.85;0;12;1;36;
 ...
 </pre>
+
+<h3>4. Processing SSL data</h3>
+
+SSL data are processed by <tt>format-ssl.pl</tt> script that reads from raw tshark output in txt format, analyzes data and prints output in CSV format. The output is a table with occurences of all combinations of ciphersuites, extensions and other SSL parameters. If -hash argument is used, instead of textual strings of SSL values, a hash value is printed. <tt> dns_file</tt> contains data from <tt>dns-resp.txt</tt>
+  
+<tt>Format: format-ssl.pl -f \<input_file\> </tt>
+ 
+Examples: 
+  * <tt>format-dns.pl -f dns.txt > dns.csv</tt>
+  
+Output: CSV file with the following structure: 
+<pre> 
+IPv4/v6 address; dst_IPv4/v6 addresses ...,; type+domain_name ..., score
+      <address>; <occur>;<occur>; ....;<occur>; total score 
+</pre>  
+
+Example of dns.txt input file:
+<pre>
+</pre>
