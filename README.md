@@ -6,7 +6,7 @@ The solution is designed as open so that new protocols can be easily added for p
 <h2>Introduction</h2>
 Scripts for mobile device profiling
 
-(c) Petr Matousek, 2017-2019
+(c) Petr Matousek, 2017-2019<br>
 Contact: matousp@fit.vutbr.cz
 
 The scripts were developed under frame of the project Integrated platform for analysis of digital data from security incidents (Tarzan), 2017-2020
