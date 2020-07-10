@@ -300,6 +300,13 @@ Src,Protocol,10.42.0.100,10.42.0.134,10.42.0.156,10.42.0.161,...
 ...
 </pre>
 
+<h2>References</h2>
+<ol>
+  <li> MATOUŠEK Petr, BURGETOVÁ Ivana and VICTOR Malombe. Mobile Device Fingerprinting. FIT-TR-2020-05, Brno, 2020. Document available at https://www.fit.vut.cz/research/publication/12313/.en
+  <li>
+</ol>
+      
+
 <h2>Licence</h2>
 This software can be freely used under BUT open software licence:
 <h3>BUT OPEN SOURCE LICENCE</h3>
