@@ -20,10 +20,12 @@ A list of scripts:
   - match-profile.pl - comparison of HTTP, DNS, SSL, DHCP, and/or QUIC profiles
 
 <h2>Installation</h2>
-All scripts were developed and used under FreeBSD system. For running scripts, the following software is required:
-* tshark, version 3.2
-* perl, version 5
-* required perl modules: Digest::MD5, Getopt::Long, JSON
+All scripts were developed and used under FreeBSD system. They can also run under any Linux or MS Windows with the required software. For running scripts, the following software is required:
+<ul>
+  <li> tshark, version 3.2
+  <li> perl, version 5
+  <li> required perl modules: Digest::MD5, Getopt::Long, JSON
+</ul>
 
 <h2>User and Programming Guide</h2>
 <h3>1. Extracting metadata from a PCAP file</h3>
