@@ -25,7 +25,7 @@ All scripts were developed and used under FreeBSD system. For running scripts, t
 * perl, version 5
 * required perl modules: Digest::MD5, Getopt::Long, JSON
 
-<h2>User Guide</h2>
+<h2>User and Programming Guide</h2>
 <h3>1. Extracting metadata from a PCAP file</h3>
 
  <tt>Format: extract_pcap.sh \<PCAP\> \<output DIR\></tt>
