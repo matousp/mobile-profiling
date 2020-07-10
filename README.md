@@ -33,7 +33,7 @@ All scripts were developed and used under FreeBSD system. For running scripts, t
  <tt>Example: extract_pcap.sh ../example/mobile-test2.pcap ../example/output</tt>
   
  - The scripts reads a PCAP file and extract selected values from HTTP, DNS, SSL, QUIC, and DHCP traffic using tshark. This data are later processed by specialized scripts, see below. Extracted data of each protocol is saved into a separted file. 
- - New protocols can be added to the analysis by inserting relevant tshark command. 
+ - New protocols can be added to the analysis by inserting relevant tshark commands, e.g.,   tshark -r <file> -T fields -E separator="," -e ip.src -e gquic.tag.uaid  "gquic.tag.uaid" | sort > quick.csv for QUIC protocol.
  - If a protocol is not present in the PCAP file, an empty output file is created.
  
  The following data are extracted from the PCAP file:
